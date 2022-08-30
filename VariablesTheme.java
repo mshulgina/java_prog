@@ -1,12 +1,12 @@
 public class VariablesTheme {
-    public static <decInt> void main (String[] args) {
+    public static void main (String[] args) {
         System.out.println("1. Создание переменных и вывод их значений на консоль");
         int cores = 6;
         int ram = 8;
         int speedCPU = 3;
         String cpu = "Intel Core i5-9500";
-        System.out.println("Мой компьютер " + cpu + cores +"-х яденрный" + " с оперативной памятью " + ram + "Гб" +
-                " и частотой процессора " + speedCPU + "ГГц");
+        System.out.println("Мой компьютер " + cpu + cores +"-х яденрный, " + ram + " Гб оперативной памятью и " +
+                speedCPU +" ГГц частотой процессора "); 
 
         System.out.println("\n2. Расчет стоимости товара со скидкой");
         int x = 100;
@@ -38,34 +38,25 @@ public class VariablesTheme {
         byte firstByte = Byte.MAX_VALUE;
         short firstShort = Short.MAX_VALUE;
         long firstLong = Long.MAX_VALUE;
-        int decInt = firstInt, incInt = firstInt;
-        decInt--;
-        incInt++;
-        System.out.println("Integer: первоначальное значение " + firstInt + " значение после инкремента " + incInt
-                + " значение после декремента "+ decInt);
-        byte decByte = firstByte, incByte = firstByte;
-        decByte--;
-        incByte++;
-        System.out.println("Byte: первоначальное значение " + firstByte + " значение после инкремента " + incByte
-                + " значение после декремента "+ decByte);
-        short decShort = firstShort, incShort = firstShort;
-        decShort--;
-        incShort++;
-        System.out.println("Short: первоначальное значение " + firstShort + " значение после инкремента " + incShort
-                + " значение после декремента "+ decShort);
-        long decLong = firstLong, incLong = firstLong;
-        decLong--;
-        incLong++;
-        System.out.println("Long: первоначальное значение " + firstLong + " значение после инкремента " + incLong
-                + " значение после декремента "+ decLong);
+        System.out.println("Integer: первоначальное значение " + firstInt);
+        System.out.println(" значение после инкремента " + firstInt++);
+        System.out.println(" значение после декремента " + firstInt--);
+        System.out.println("Byte: первоначальное значение " + firstByte);
+        System.out.println(" значение после инкремента " + firstByte++);
+        System.out.println(" значение после декремента "+ firstByte--);
+        System.out.println("Short: первоначальное значение " + firstShort);
+        System.out.println(" значение после инкремента " + firstShort++);
+        System.out.println(" значение после декремента " + firstShort--);
+        System.out.println("Long: первоначальное значение " + firstLong);
+        System.out.println(" значение после инкремента " + firstLong++);
+        System.out.println(" значение после декремента " + firstLong--);
 
         System.out.println("\n5. Перестановка значений переменных");
-        int a1 = 1;
+        int a1 = 5;
         int b1 = 2;
         System.out.println("Способ 1. С помощью третьей переменной: ");
         System.out.println("Исходные значения: a1 = " + a1 + " b1 = " + b1);
-        int tmp = 1;
-        a1 = tmp;
+        int tmp = a1;
         a1 = b1;
         b1 = tmp;
         System.out.println("После применения способа 1: a1 = " + a1 + " b1 = " + b1);
@@ -98,40 +89,40 @@ public class VariablesTheme {
         int number = 345;
         int k,l,m;
         m = number%10;
-        l = ((number%100) - m)/10;
-        k = (number - l*10 - m)/100;
+        k = number/100;
+        l = number/10%10;
         System.out.println("Дано число N = " + number + ". Cумма цифр числа N = " + (k+l+m) + ". Произведение цифр " +
                 "числа N " + (k*l*m));
 
         System.out.println("\n8. Вывод на консоль ASCII-арт Дюка");
         char space = ' ';
         char slashR = '/';
-        int slashL  = 92;
+        char slashL  = '\\';
         char underL = '_';
         char brOpen = '(';
         char brClose = ')';
-        String line1 =new String(new char[] {space, space, space, space, space,  slashR,  (char)slashL});
+        String line1 =new String(new char[] {space, space, space, space, space,  slashR,  slashL});
         System.out.println(line1);
-        String line2 =new String(new char[] {space, space, space, space,  slashR, space, space, (char)slashL});
+        String line2 =new String(new char[] {space, space, space, space,  slashR, space, space, slashL});
         System.out.println(line2);
-        String line3 =new String(new char[] {space, space, space, slashR, space, space, space, space, (char)slashL});
+        String line3 =new String(new char[] {space, space, space, slashR, space, space, space, space, slashL});
         System.out.println(line3);
         String line4 =new String(new char[] {space, space, slashR, underL,brOpen, space, space, brClose, space,
-                (char)slashL});
+                slashL});
         System.out.println(line4);
-        String line5 =new String(new char[] {space, slashR, underL, underL, underL, underL, slashR, (char)slashL,
-        underL, underL, (char)slashL});
+        String line5 =new String(new char[] {space, slashR, underL, underL, underL, underL, slashR, slashL,
+        underL, underL, slashL});
         System.out.println(line5);
 
         System.out.println("\n9. Отображение количества сотен, десятков и единиц числа");
         int numberN = 123;
         int q,p,r;
         r = numberN%10;
-        p = ((numberN%100) - r)/10;
-        q = (numberN - p*10 - r)/100;
-        System.out.println("Число " + numberN + " содержит: " + r + " сотни; "+ p +" десятка; " + q + " единицу.");
+        p = numberN/100;
+        q = numberN/10%10;
+        System.out.println("Число " + numberN + " содержит: " + p + " сотни; "+ q +" десятка; " + r + " единицу.");
 
-        System.out.println("\n10. Отображение количества сотен, десятков и единиц числа");
+        System.out.println("\n10. Преобразование секунд");
         int totalSecs = 86399;
         int hours, minutes,seconds;
         hours = totalSecs / 3600;
